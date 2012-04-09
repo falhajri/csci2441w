@@ -12,19 +12,19 @@ CREATE TABLE command (
     aor varchar(35) NOT NULL,
     parent int(11),
     primary key(commandid)
-) TYPE=MyISAM;
+) ENGINE=MyISAM;
 
 CREATE TABLE commandowners (
     command int(11) NOT NULL,
     emplid int(11) NOT NULL
-) TYPE=MyISAM;
+) ENGINE=MyISAM;
 
 CREATE TABLE dutystation (
     dutystationid int(11) not null auto_increment,
     name varchar(255) NOT NULL,
     location point NOT NULL,
 primary key(dutystationid)
-) TYPE=MyISAM;
+) ENGINE=MyISAM;
 
 CREATE TABLE person (
     emplid int(11) unique NOT NULL,
@@ -35,7 +35,7 @@ CREATE TABLE person (
     last varchar(255) NOT NULL,
     status int(11) NOT NULL,
 primary key (emplid)
-) TYPE=MyISAM;
+) ENGINE=MyISAM;
 
 CREATE TABLE roleassignment (
     roleassignmentid int(11) NOT NULL auto_increment,
@@ -44,13 +44,13 @@ CREATE TABLE roleassignment (
     userid int(11) NOT NULL,
     command int(11) NOT NULL,
 primary key(roleassignmentid)
-) TYPE=MyISAM;
+) ENGINE=MyISAM;
 
 CREATE TABLE roles (
     rolesid int(11) not null auto_increment,
     description varchar(255) NOT NULL,
 primary key(rolesid)
-) TYPE=MyISAM;
+) ENGINE=MyISAM;
 
 CREATE TABLE skill (
     skillid int(11) not null auto_increment,
@@ -58,7 +58,7 @@ CREATE TABLE skill (
     helptext text NOT NULL,
     owner int(11) NOT NULL,
 primary key(skillid)
-) TYPE=MyISAM;
+) ENGINE=MyISAM;
 
 CREATE TABLE skillentry (
     skillentryid int(11) not null auto_increment,
@@ -68,7 +68,7 @@ CREATE TABLE skillentry (
     enteredby varchar(255) NOT NULL,
     `status` varchar(255) NOT NULL,
 primary key (skillentryid)
-) TYPE=MyISAM;
+) ENGINE=MyISAM;
 
 CREATE TABLE skillquestions (
     id int(11) not null auto_increment,
@@ -77,7 +77,7 @@ CREATE TABLE skillquestions (
     effectivedate date NOT NULL,
     subordinate bool NOT NULL,
 primary key(id)
-) TYPE=MyISAM;
+) ENGINE=MyISAM;
 
 CREATE TABLE surveychoices (
     id int(11) not null auto_increment,
@@ -85,14 +85,14 @@ CREATE TABLE surveychoices (
     value varchar(255) NOT NULL,
     surveyquestionid int(11) NOT NULL,
 primary key(id)
-) TYPE=MyISAM;
+) ENGINE=MyISAM;
 
 CREATE TABLE surveyquestionresponsechoice (
     id int(11) not null auto_increment,
     skillentryid int(11) NOT NULL,
     surveychoiceid int(11) NOT NULL,
 primary key(id)
-) TYPE=MyISAM;
+) ENGINE=MyISAM;
 
 CREATE TABLE surveyquestionresponsetext (
     id int(11) not null auto_increment,
@@ -100,7 +100,7 @@ CREATE TABLE surveyquestionresponsetext (
     surveyquestionid int(11) NOT NULL,
     value text NOT NULL,
 primary key(id)
-) TYPE=MyISAM;
+) ENGINE=MyISAM;
 
 CREATE TABLE surveyquestions (
     surveyquestionsid int(11) not null auto_increment,
@@ -110,21 +110,21 @@ CREATE TABLE surveyquestions (
     required bool NOT NULL,
     skillquestionid int(11) NOT NULL,
 primary key(surveyquestionsid)
-) TYPE=MyISAM;
+) ENGINE=MyISAM;
 
 CREATE TABLE tasks (
     tasksid int(11) not null auto_increment,
     name varchar(255) NOT NULL,
     roleid int(11) NOT NULL,
 primary key (tasksid)
-) TYPE=MyISAM;
+) ENGINE=MyISAM;
 
 CREATE TABLE users (
     userid int(11) not null auto_increment,
     emplid int(11) NOT NULL,
     passwordhash text NOT NULL,
 primary key(userid)
-) TYPE=MyISAM;
+) ENGINE=MyISAM;
 
 INSERT INTO command VALUES (1, 'Command 1                          ', 'AUX                                ', 'AOR                                ', NULL);
 INSERT INTO command VALUES (2, 'Command 2                          ', 'AUX                                ', 'AOR                                ', 1);

@@ -54,3 +54,80 @@ REQUEST_URI=/csci2441w/skillsdb/index.php?r=Person
 in /var/www/csci2441w/skillsdb/protected/views/person/_view.php (12)
 in /var/www/csci2441w/skillsdb/protected/views/person/index.php (17)
 in /var/www/csci2441w/skillsdb/protected/controllers/PersonController.php (133)
+2012/04/09 13:41:08 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[42000] [1049] Unknown database 'project'' in /Applications/MAMP/htdocs/csci2441w/yii/framework/db/CDbConnection.php:382
+Stack trace:
+#0 /Applications/MAMP/htdocs/csci2441w/yii/framework/db/CDbConnection.php(331): CDbConnection->open()
+#1 /Applications/MAMP/htdocs/csci2441w/yii/framework/db/CDbConnection.php(309): CDbConnection->setActive(true)
+#2 /Applications/MAMP/htdocs/csci2441w/yii/framework/base/CModule.php(388): CDbConnection->init()
+#3 /Applications/MAMP/htdocs/csci2441w/yii/framework/base/CApplication.php(431): CModule->getComponent('db')
+#4 /Applications/MAMP/htdocs/csci2441w/yii/framework/db/ar/CActiveRecord.php(615): CApplication->getDb()
+#5 /Applications/MAMP/htdocs/csci2441w/yii/framework/db/ar/CActiveRecord.php(2263): CActiveRecord->getDbConnection()
+#6 /Applications/MAMP/htdocs/csci2441w/yii/framework/db/ar/CActiveRecord.php(379): CActiveRecordMetaData->__construct(Object(DutyStation))
+#7 /Applications/MAMP/htdocs/csci2441w/yii/framework/web/CActiveDataProvider.php(75): CActiveRecord::model('DutyStation')
+#8 /Applications/MAMP/htdocs/csci2441w/skillsdb/protected/controllers/DutystationController.php(130): CActiveDataProvider->__construct('DutyStation')
+#9 /Applications/MAMP/htdocs/csci2441w/yii/framework/web/actions/CInlineAction.php(50): DutyStationController->actionIndex()
+#10 /Applications/MAMP/htdocs/csci2441w/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#11 /Applications/MAMP/htdocs/csci2441w/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#12 /Applications/MAMP/htdocs/csci2441w/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#13 /Applications/MAMP/htdocs/csci2441w/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#14 /Applications/MAMP/htdocs/csci2441w/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#15 /Applications/MAMP/htdocs/csci2441w/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#16 /Applications/MAMP/htdocs/csci2441w/yii/framework/web/CController.php(292): CFilterChain->run()
+#17 /Applications/MAMP/htdocs/csci2441w/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 /Applications/MAMP/htdocs/csci2441w/yii/framework/web/CWebApplication.php(276): CController->run('')
+#19 /Applications/MAMP/htdocs/csci2441w/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('dutystation')
+#20 /Applications/MAMP/htdocs/csci2441w/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#21 /Applications/MAMP/htdocs/csci2441w/skillsdb/index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/csci2441w/skillsdb/index.php?r=dutystation
+---
+2012/04/09 13:55:49 [error] [php] htmlspecialchars() [<a href='function.htmlspecialchars'>function.htmlspecialchars</a>]: Invalid multibyte sequence in argument (/Applications/MAMP/htdocs/csci2441w/yii/framework/web/helpers/CHtml.php:85)
+Stack trace:
+#0 /Applications/MAMP/htdocs/csci2441w/yii/framework/web/CBaseController.php(127): require()
+#1 /Applications/MAMP/htdocs/csci2441w/yii/framework/web/CBaseController.php(96): DutyStationController->renderInternal()
+#2 /Applications/MAMP/htdocs/csci2441w/yii/framework/web/CController.php(870): DutyStationController->renderFile()
+#3 /Applications/MAMP/htdocs/csci2441w/yii/framework/zii/widgets/CListView.php(242): DutyStationController->renderPartial()
+#4 /Applications/MAMP/htdocs/csci2441w/yii/framework/zii/widgets/CBaseListView.php(158): CListView->renderItems()
+#5 unknown(0): CListView->renderSection()
+#6 /Applications/MAMP/htdocs/csci2441w/yii/framework/zii/widgets/CBaseListView.php(141): preg_replace_callback()
+#7 /Applications/MAMP/htdocs/csci2441w/yii/framework/zii/widgets/CBaseListView.php(126): CListView->renderContent()
+#8 /Applications/MAMP/htdocs/csci2441w/yii/framework/web/CBaseController.php(174): CListView->run()
+#9 /Applications/MAMP/htdocs/csci2441w/skillsdb/protected/views/dutystation/index.php(17): DutyStationController->widget()
+#10 /Applications/MAMP/htdocs/csci2441w/yii/framework/web/CBaseController.php(127): require()
+#11 /Applications/MAMP/htdocs/csci2441w/yii/framework/web/CBaseController.php(96): DutyStationController->renderInternal()
+#12 /Applications/MAMP/htdocs/csci2441w/yii/framework/web/CController.php(870): DutyStationController->renderFile()
+#13 /Applications/MAMP/htdocs/csci2441w/yii/framework/web/CController.php(783): DutyStationController->renderPartial()
+#14 /Applications/MAMP/htdocs/csci2441w/skillsdb/protected/controllers/DutystationController.php(133): DutyStationController->render()
+#15 /Applications/MAMP/htdocs/csci2441w/yii/framework/web/actions/CInlineAction.php(50): DutyStationController->actionIndex()
+#16 /Applications/MAMP/htdocs/csci2441w/yii/framework/web/CController.php(309): CInlineAction->runWithParams()
+#17 /Applications/MAMP/htdocs/csci2441w/yii/framework/web/filters/CFilterChain.php(134): DutyStationController->runAction()
+#18 /Applications/MAMP/htdocs/csci2441w/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#19 /Applications/MAMP/htdocs/csci2441w/yii/framework/web/CController.php(1146): CAccessControlFilter->filter()
+#20 /Applications/MAMP/htdocs/csci2441w/yii/framework/web/filters/CInlineFilter.php(59): DutyStationController->filterAccessControl()
+#21 /Applications/MAMP/htdocs/csci2441w/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter()
+#22 /Applications/MAMP/htdocs/csci2441w/yii/framework/web/CController.php(292): CFilterChain->run()
+#23 /Applications/MAMP/htdocs/csci2441w/yii/framework/web/CController.php(266): DutyStationController->runActionWithFilters()
+#24 /Applications/MAMP/htdocs/csci2441w/yii/framework/web/CWebApplication.php(276): DutyStationController->run()
+#25 /Applications/MAMP/htdocs/csci2441w/yii/framework/web/CWebApplication.php(135): CWebApplication->runController()
+#26 /Applications/MAMP/htdocs/csci2441w/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#27 /Applications/MAMP/htdocs/csci2441w/skillsdb/index.php(13): CWebApplication->run()
+REQUEST_URI=/csci2441w/skillsdb/index.php?r=dutystation
+in /Applications/MAMP/htdocs/csci2441w/skillsdb/protected/views/dutystation/_view.php (12)
+in /Applications/MAMP/htdocs/csci2441w/skillsdb/protected/views/dutystation/index.php (17)
+in /Applications/MAMP/htdocs/csci2441w/skillsdb/protected/controllers/DutystationController.php (133)
+2012/04/09 13:55:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "unit".' in /Applications/MAMP/htdocs/csci2441w/yii/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /Applications/MAMP/htdocs/csci2441w/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('unit')
+#1 /Applications/MAMP/htdocs/csci2441w/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/MAMP/htdocs/csci2441w/skillsdb/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/csci2441w/skillsdb/index.php?r=unit
+---
+2012/04/09 13:55:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "skill".' in /Applications/MAMP/htdocs/csci2441w/yii/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /Applications/MAMP/htdocs/csci2441w/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('skill')
+#1 /Applications/MAMP/htdocs/csci2441w/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/MAMP/htdocs/csci2441w/skillsdb/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/csci2441w/skillsdb/index.php?r=skill
+---
